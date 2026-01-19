@@ -6,26 +6,20 @@ import RSVP from "./components/RSVP";
 
 function App() {
   return (
-    // CONTENEDOR MÓVIL (Ancho fijo, centrado, sombra)
-    <div className="w-full max-w-[420px] bg-crema min-h-screen shadow-2xl relative flex flex-col font-sans">
-      {/* Barra superior dorada fina */}
-      <div className="h-1.5 w-full bg-gradient-to-r from-vino via-dorado to-vino"></div>
+    // CONTENEDOR PRINCIPAL
+    // h-screen: Ocupa toda la altura
+    // overflow-y-scroll: Permite scrollear
+    // snap-y snap-mandatory: Activa el magnetismo vertical obligatorio
+    <div className="w-full max-w-[420px] h-screen bg-crema shadow-2xl relative font-sans overflow-y-scroll snap-y snap-mandatory scroll-smooth no-scrollbar">
+      {/* Barra superior decorativa fija (opcional, se mueve con el scroll o se queda fija) */}
+      <div className="fixed top-0 z-50 h-1.5 w-full max-w-[420px] bg-gradient-to-r from-vino via-dorado to-vino"></div>
 
-      <main className="flex-grow">
-        <Hero />
-        <DateCard />
-        <Location />
-        <Gifts />
-        <RSVP />
-      </main>
-
-      {/* Footer Fijo Decorativo */}
-      <footer className="bg-vino py-6 text-center">
-        <p className="text-dorado font-script text-2xl">Valeria</p>
-        <p className="text-crema/50 text-[10px] uppercase tracking-widest mt-1">
-          Gracias por acompañarnos
-        </p>
-      </footer>
+      {/* Cada componente ahora es una "diapositiva" completa */}
+      <Hero />
+      <DateCard />
+      <Location />
+      <Gifts />
+      <RSVP />
     </div>
   );
 }

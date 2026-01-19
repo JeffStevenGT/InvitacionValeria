@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { data } from "../data/info";
 // RUTA CORREGIDA
-import imgFondo from "../assets/images/fondo-fecha.jpeg";
+import imgFondo from "../assets/images/fondo-hero.png";
 
 export default function DateCard() {
   const [timeLeft, setTimeLeft] = useState({

@@ -1,6 +1,6 @@
 import { data } from "../data/info";
 // RUTA CORREGIDA
-import imgFondo from "../assets/images/fondo-hero.jpeg";
+import imgFondo from "../assets/images/fondo-hero.png";
 
 export default function Hero() {
   return (

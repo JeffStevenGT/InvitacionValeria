@@ -1,5 +1,5 @@
 // RUTA CORREGIDA
-import imgFondo from "../assets/images/fondo-rsvp.jpeg";
+import imgFondo from "../assets/images/fondo-hero.png";
 
 export default function RSVP() {
   return (

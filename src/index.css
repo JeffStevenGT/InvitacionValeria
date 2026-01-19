@@ -1,0 +1,59 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Great+Vibes&family=Montserrat:wght@300;400;500&display=swap");
+
+@import "tailwindcss";
+
+@theme {
+  /* Paleta de Colores Exacta */
+  --color-vino: #5e0a0a;
+  --color-vino-claro: #8a1c1c;
+  --color-dorado: #c5a059;
+  --color-crema: #fdfbf7;
+  --color-texto: #4a4a4a;
+
+  /* Tipografías */
+  --font-script: "Great Vibes", cursive;
+  --font-serif: "Cinzel", serif;
+  --font-sans: "Montserrat", sans-serif;
+
+  /* Animaciones suaves */
+  --animate-fade-in: fadeIn 1.5s ease-out;
+  --animate-float: float 3s ease-in-out infinite;
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes float {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+}
+
+/* Estilos globales */
+body {
+  background-color: #2a2a2a; /* Fondo oscuro para el navegador (fuera del cel) */
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+#root {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}

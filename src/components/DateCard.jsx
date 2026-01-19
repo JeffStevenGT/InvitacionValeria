@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import { data } from "../data/info";
+// RUTA CORREGIDA
+import imgFondo from "../assets/images/fondo-fecha.jpeg";
 
 export default function DateCard() {
   const [timeLeft, setTimeLeft] = useState({
@@ -16,7 +18,6 @@ export default function DateCard() {
     const interval = setInterval(() => {
       const now = new Date();
       const difference = targetDate - now;
-
       if (difference <= 0) {
         clearInterval(interval);
       } else {
@@ -33,11 +34,16 @@ export default function DateCard() {
   const googleCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=XV+Años+de+${data.nombre}&details=${data.frase}&location=${data.ubicacion.lugar}&dates=20240914T180000/20240915T020000`;
 
   return (
-    <section className="h-dvh w-full snap-start bg-transparent flex flex-col justify-center items-center px-6 relative">
-      {/* Marco decorativo */}
-      <div className="absolute inset-6 border border-dorado/30 pointer-events-none"></div>
+    <section
+      className="h-dvh w-full snap-start flex flex-col justify-center items-center px-6 relative bg-cover bg-center"
+      style={{ backgroundImage: `url(${imgFondo})` }}
+    >
+      {/* Capa mucho más opaca (90%) */}
+      <div className="absolute inset-0 bg-crema/92"></div>
 
-      <div className="text-center mb-8 transform scale-100 animate-fade-in">
+      <div className="absolute inset-6 border border-dorado/40 pointer-events-none z-10"></div>
+
+      <div className="relative z-10 text-center mb-8 transform scale-100 animate-fade-in">
         <span className="font-script text-4xl text-dorado block mb-2">
           Sábado
         </span>
@@ -52,7 +58,7 @@ export default function DateCard() {
         </span>
       </div>
 
-      <div className="flex gap-3 items-center justify-center text-vino mb-10 bg-white/40 backdrop-blur-sm p-4 rounded-lg border border-dorado/20">
+      <div className="relative z-10 flex gap-3 items-center justify-center text-vino mb-10 bg-white/50 backdrop-blur-md p-4 rounded-lg border border-dorado/20 shadow-sm">
         <TimeUnit value={timeLeft.dias} label="Días" />
         <span className="text-dorado text-xl pb-3">:</span>
         <TimeUnit value={timeLeft.horas} label="Hrs" />
@@ -66,7 +72,7 @@ export default function DateCard() {
         href={googleCalendarUrl}
         target="_blank"
         rel="noreferrer"
-        className="flex items-center gap-2 bg-vino px-6 py-3 rounded-sm shadow-lg hover:bg-vino-claro transition-all active:scale-95 group cursor-pointer"
+        className="relative z-10 flex items-center gap-2 bg-vino px-6 py-3 rounded-sm shadow-lg hover:bg-vino-claro transition-all active:scale-95 group cursor-pointer"
       >
         <span className="text-dorado text-lg">📅</span>
         <span className="text-crema font-serif text-xs uppercase tracking-widest">

@@ -1,15 +1,15 @@
 import { data } from "../data/info";
+// RUTA CORREGIDA
+import imgFondo from "../assets/images/fondo-hero.jpeg";
 
 export default function Hero() {
   return (
-    <section className="relative h-dvh w-full snap-start flex flex-col justify-center items-center text-center px-6 bg-transparent overflow-hidden">
-      {/* Imagen decorativa superior (extra para dar profundidad) */}
-      <img
-        src="https://images.unsplash.com/photo-1588410712972-e14a1c6e147f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-        alt="Flores"
-        className="absolute top-0 w-full h-64 object-cover opacity-20 mask-image-gradient-b"
-        style={{ maskImage: "linear-gradient(to bottom, black, transparent)" }}
-      />
+    <section
+      className="relative h-dvh w-full snap-start flex flex-col justify-center items-center text-center px-6 overflow-hidden bg-cover bg-center"
+      style={{ backgroundImage: `url(${imgFondo})` }}
+    >
+      {/* Capa más opaca (85%) para que el fondo sea más sutil */}
+      <div className="absolute inset-0 bg-white/85"></div>
 
       <div className="relative z-10 flex flex-col items-center gap-2 w-full animate-fade-in mt-10">
         <p className="text-vino text-xs tracking-[0.25em] uppercase font-sans mb-2">
@@ -25,7 +25,7 @@ export default function Hero() {
           </p>
         </div>
 
-        <div className="mt-8 flex flex-col gap-3 p-4 border-t border-b border-dorado/30 w-3/4 mx-auto bg-white/30 backdrop-blur-[1px]">
+        <div className="mt-8 flex flex-col gap-3 p-4 border-t border-b border-dorado/30 w-3/4 mx-auto bg-white/40 backdrop-blur-sm rounded-sm">
           <p className="font-sans text-[9px] uppercase text-texto tracking-widest">
             En compañía de mis padres
           </p>
@@ -37,7 +37,7 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="absolute bottom-8 animate-bounce text-vino opacity-50">
+      <div className="absolute bottom-8 animate-bounce text-vino opacity-80 z-10">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"

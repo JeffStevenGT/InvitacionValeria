@@ -10,7 +10,6 @@ export default function DateCard() {
   });
 
   useEffect(() => {
-    // FECHA OBJETIVO + 60 DÍAS
     const targetDate = new Date();
     targetDate.setDate(targetDate.getDate() + 60);
 
@@ -34,7 +33,7 @@ export default function DateCard() {
   const googleCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=XV+Años+de+${data.nombre}&details=${data.frase}&location=${data.ubicacion.lugar}&dates=20240914T180000/20240915T020000`;
 
   return (
-    <section className="h-dvh w-full snap-start bg-floral-pattern flex flex-col justify-center items-center px-6 relative">
+    <section className="h-dvh w-full snap-start bg-transparent flex flex-col justify-center items-center px-6 relative">
       {/* Marco decorativo */}
       <div className="absolute inset-6 border border-dorado/30 pointer-events-none"></div>
 
@@ -53,8 +52,7 @@ export default function DateCard() {
         </span>
       </div>
 
-      {/* CONTADOR */}
-      <div className="flex gap-3 items-center justify-center text-vino mb-10 bg-white/50 backdrop-blur-sm p-4 rounded-lg border border-dorado/20">
+      <div className="flex gap-3 items-center justify-center text-vino mb-10 bg-white/40 backdrop-blur-sm p-4 rounded-lg border border-dorado/20">
         <TimeUnit value={timeLeft.dias} label="Días" />
         <span className="text-dorado text-xl pb-3">:</span>
         <TimeUnit value={timeLeft.horas} label="Hrs" />

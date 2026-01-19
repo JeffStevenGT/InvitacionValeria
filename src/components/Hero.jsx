@@ -2,8 +2,8 @@ import { data } from "../data/info";
 
 export default function Hero() {
   return (
-    <section className="relative h-dvh w-full snap-start flex flex-col justify-center items-center text-center px-6 bg-floral-pattern overflow-hidden">
-      {/* Imagen decorativa superior (flores) */}
+    <section className="relative h-dvh w-full snap-start flex flex-col justify-center items-center text-center px-6 bg-transparent overflow-hidden">
+      {/* Imagen decorativa superior (extra para dar profundidad) */}
       <img
         src="https://images.unsplash.com/photo-1588410712972-e14a1c6e147f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
         alt="Flores"
@@ -16,7 +16,6 @@ export default function Hero() {
           Celebrando los
         </p>
 
-        {/* Título Principal */}
         <div className="relative py-6 w-full">
           <h1 className="font-script text-[5.5rem] text-vino leading-[0.7] drop-shadow-sm">
             {data.nombre}
@@ -26,8 +25,7 @@ export default function Hero() {
           </p>
         </div>
 
-        {/* Padres (Integrados elegantemente) */}
-        <div className="mt-8 flex flex-col gap-3 p-4 border-t border-b border-dorado/30 w-3/4 mx-auto">
+        <div className="mt-8 flex flex-col gap-3 p-4 border-t border-b border-dorado/30 w-3/4 mx-auto bg-white/30 backdrop-blur-[1px]">
           <p className="font-sans text-[9px] uppercase text-texto tracking-widest">
             En compañía de mis padres
           </p>
@@ -39,7 +37,6 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Flecha */}
       <div className="absolute bottom-8 animate-bounce text-vino opacity-50">
         <svg
           xmlns="http://www.w3.org/2000/svg"

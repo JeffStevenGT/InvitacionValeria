@@ -39,7 +39,6 @@
     }
   }
 
-  /* Aleteo suave en su sitio */
   @keyframes flutter {
     0% {
       transform: rotate(-5deg) scale(1);
@@ -50,11 +49,20 @@
   }
 }
 
-/* Fondo floral sutil para secciones claras */
-.bg-floral-pattern {
+/* --- FONDO GLOBAL MAESTRO --- */
+/* Combina un degradado crema->rosa pálido con una textura floral */
+.bg-floral-gradient {
   background-color: var(--color-crema);
-  background-image: url("https://www.transparenttextures.com/patterns/floral-linen.png");
-  background-size: 300px;
+  background-image:
+    linear-gradient(
+      to bottom,
+      rgba(253, 251, 247, 0.9),
+      rgba(245, 235, 235, 0.85)
+    ),
+    url("https://www.transparenttextures.com/patterns/floral-linen.png");
+  background-size: cover, 300px;
+  background-attachment: fixed; /* El fondo se queda fijo mientras scrolleas */
+  background-blend-mode: multiply;
 }
 
 body {

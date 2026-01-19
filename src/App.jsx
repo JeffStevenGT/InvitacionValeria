@@ -6,8 +6,8 @@ import RSVP from "./components/RSVP";
 
 function App() {
   return (
-    // Estructura de Scroll Snap vertical
-    <div className="w-full max-w-[420px] h-dvh bg-[#1a1a1a] shadow-2xl relative font-sans overflow-y-scroll snap-y snap-mandatory scroll-smooth no-scrollbar border-x border-[#1a1a1a]">
+    // bg-floral-gradient aplicado aquí. Los hijos serán transparentes.
+    <div className="w-full max-w-[420px] h-dvh bg-floral-gradient shadow-2xl relative font-sans overflow-y-scroll snap-y snap-mandatory scroll-smooth no-scrollbar border-x border-[#1a1a1a]">
       <Hero />
       <DateCard />
       <Location />

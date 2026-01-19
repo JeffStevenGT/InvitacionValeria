@@ -1,6 +1,6 @@
 export default function RSVP() {
   return (
-    <section className="h-dvh w-full snap-start bg-floral-pattern flex flex-col justify-between pt-20 relative">
+    <section className="h-dvh w-full snap-start bg-transparent flex flex-col justify-between pt-20 relative">
       <div className="flex-grow flex flex-col justify-center px-8">
         <div className="text-center mb-10">
           <h2 className="font-script text-6xl text-vino mb-2">Confirmar</h2>
@@ -11,7 +11,7 @@ export default function RSVP() {
         </div>
 
         <form
-          className="space-y-8 max-w-xs mx-auto w-full"
+          className="space-y-8 max-w-xs mx-auto w-full bg-white/30 backdrop-blur-sm p-6 rounded-lg"
           onSubmit={(e) => e.preventDefault()}
         >
           <div className="relative group">

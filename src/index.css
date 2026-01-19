@@ -1,23 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Great+Vibes&family=Montserrat:wght@300;400;500&display=swap");
-
 @import "tailwindcss";
 
 @theme {
-  /* Paleta de Colores Exacta */
   --color-vino: #5e0a0a;
   --color-vino-claro: #8a1c1c;
   --color-dorado: #c5a059;
   --color-crema: #fdfbf7;
   --color-texto: #4a4a4a;
 
-  /* Tipografías */
   --font-script: "Great Vibes", cursive;
   --font-serif: "Cinzel", serif;
   --font-sans: "Montserrat", sans-serif;
 
-  /* Animaciones suaves */
   --animate-fade-in: fadeIn 1.5s ease-out;
   --animate-float: float 3s ease-in-out infinite;
+  --animate-flutter: flutter 0.8s infinite alternate; /* Aleteo */
+  --animate-fly-path: flyPath 15s linear infinite; /* Trayectoria de vuelo */
 
   @keyframes fadeIn {
     from {
@@ -41,19 +39,49 @@
       transform: translateY(0px);
     }
   }
+
+  /* Animación de aleteo de alas */
+  @keyframes flutter {
+    0% {
+      transform: scaleX(1) rotate(0deg);
+    }
+    100% {
+      transform: scaleX(0.4) rotate(5deg);
+    } /* Se encoge para simular aleteo */
+  }
+
+  /* Trayectoria de la mariposa por la pantalla */
+  @keyframes flyPath {
+    0% {
+      offset-distance: 0%;
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      offset-distance: 100%;
+      opacity: 0;
+    }
+  }
 }
 
 /* Estilos globales */
 body {
-  background-color: #2a2a2a; /* Fondo oscuro para el navegador (fuera del cel) */
+  background-color: #2a2a2a;
   margin: 0;
   display: flex;
   justify-content: center;
-  min-height: 100vh;
 }
 
-#root {
-  width: 100%;
-  display: flex;
-  justify-content: center;
+/* Ocultar scrollbar pero permitir scroll */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }

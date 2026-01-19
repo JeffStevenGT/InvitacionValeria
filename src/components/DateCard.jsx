@@ -10,8 +10,7 @@ export default function DateCard() {
   });
 
   useEffect(() => {
-    // FECHA OBJETIVO: 60 días a partir de hoy (Simulado)
-    // Para una fecha real usa: new Date("2026-09-14T18:00:00")
+    // FECHA FIJA (Ejemplo: dentro de 60 días)
     const targetDate = new Date();
     targetDate.setDate(targetDate.getDate() + 60);
 
@@ -29,21 +28,22 @@ export default function DateCard() {
         setTimeLeft({ dias, horas, min, seg });
       }
     }, 1000);
-
     return () => clearInterval(interval);
   }, []);
 
-  return (
-    <section className="h-screen w-full snap-start bg-crema flex flex-col justify-center items-center px-6 relative">
-      {/* Marco decorativo */}
-      <div className="absolute inset-6 border border-dorado/30 pointer-events-none"></div>
+  // Función para crear link de Google Calendar
+  const googleCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=XV+Años+de+${data.nombre}&details=${data.frase}&location=${data.ubicacion.lugar}&dates=20240914T180000/20240915T020000`;
 
-      {/* Fecha Principal */}
-      <div className="text-center mb-12 transform scale-100">
+  return (
+    <section className="h-dvh w-full snap-start flex flex-col justify-center items-center px-6 relative bg-transparent">
+      {/* Marco decorativo */}
+      <div className="absolute inset-6 border border-dorado/30 pointer-events-none rounded-lg"></div>
+
+      <div className="text-center mb-10 transform scale-100 animate-fade-in">
         <span className="font-script text-4xl text-dorado block mb-2">
           Sábado
         </span>
-        <span className="font-serif text-[6rem] text-vino leading-none block">
+        <span className="font-serif text-[5.5rem] text-vino leading-none block">
           {data.fecha.dia}
         </span>
         <span className="font-serif text-2xl text-vino-claro uppercase tracking-[0.3em] block mt-1">
@@ -54,8 +54,8 @@ export default function DateCard() {
         </span>
       </div>
 
-      {/* CONTADOR ELEGANTE */}
-      <div className="flex gap-4 items-center justify-center text-vino">
+      {/* CONTADOR */}
+      <div className="flex gap-3 items-center justify-center text-vino mb-10">
         <TimeUnit value={timeLeft.dias} label="Días" />
         <span className="text-dorado text-xl pb-4">:</span>
         <TimeUnit value={timeLeft.horas} label="Hrs" />
@@ -65,20 +65,27 @@ export default function DateCard() {
         <TimeUnit value={timeLeft.seg} label="Seg" />
       </div>
 
-      <p className="font-sans text-[10px] text-texto uppercase tracking-[0.2em] mt-8 opacity-60">
-        Falta poco para el gran día
-      </p>
+      {/* BOTÓN CALENDARIO */}
+      <a
+        href={googleCalendarUrl}
+        target="_blank"
+        rel="noreferrer"
+        className="flex items-center gap-2 bg-vino px-6 py-3 rounded-full shadow-lg hover:bg-vino-claro transition-all active:scale-95 group"
+      >
+        <span className="text-crema font-sans text-xs uppercase tracking-widest group-hover:text-white">
+          Agendar Fecha
+        </span>
+      </a>
     </section>
   );
 }
 
-// Subcomponente para cada unidad de tiempo
 const TimeUnit = ({ value, label }) => (
   <div className="flex flex-col items-center">
-    <span className="font-serif text-3xl w-12 text-center">
+    <span className="font-serif text-2xl w-10 text-center font-bold">
       {String(value).padStart(2, "0")}
     </span>
-    <span className="font-sans text-[9px] uppercase tracking-widest opacity-60">
+    <span className="font-sans text-[8px] uppercase tracking-widest opacity-70">
       {label}
     </span>
   </div>

@@ -1,6 +1,5 @@
 import React from "react";
 
-// Componente SVG Mariposa
 const Mariposa = () => (
   <svg
     width="30"
@@ -14,18 +13,17 @@ const Mariposa = () => (
 
 export default function Gifts() {
   return (
-    <section className="h-screen w-full snap-start bg-[#fcf8f2] flex flex-col justify-center items-center px-6 relative overflow-hidden">
-      {/* MARIPOSA VOLADORA */}
-      {/* Definimos una ruta en línea usando style para que vuele por la pantalla */}
+    // bg-transparent y overflow-hidden para las mariposas
+    <section className="h-dvh w-full snap-start bg-transparent flex flex-col justify-center items-center px-6 relative overflow-hidden">
+      {/* MARIPOSAS ANIMADAS (Mismo código anterior) */}
       <div
-        className="absolute z-20 pointer-events-none"
+        className="absolute z-0 pointer-events-none"
         style={{
           top: "20%",
           left: "-10%",
           animation: "flyPath 18s linear infinite",
         }}
       >
-        {/* offset-path es ideal, pero para soporte total usamos transformación simple combinada con el CSS global */}
         <div
           style={{
             offsetPath: 'path("M0,100 C100,0 200,200 300,50 400,100 500,-50")',
@@ -35,10 +33,8 @@ export default function Gifts() {
           <Mariposa />
         </div>
       </div>
-
-      {/* Segunda Mariposa más pequeña y lenta */}
       <div
-        className="absolute z-20 pointer-events-none opacity-50"
+        className="absolute z-0 pointer-events-none opacity-50"
         style={{
           bottom: "30%",
           right: "-10%",
@@ -50,33 +46,24 @@ export default function Gifts() {
         </div>
       </div>
 
-      {/* CONTENIDO PRINCIPAL */}
+      {/* CAJA DE CRISTAL */}
       <div className="relative z-10 w-full max-w-xs mx-auto">
-        {/* Caja estilo tarjeta lujosa */}
-        <div className="bg-white/80 backdrop-blur-md p-10 shadow-[0_20px_50px_rgba(197,160,89,0.15)] rounded-t-full border-b-4 border-dorado">
+        <div className="bg-white/60 backdrop-blur-sm p-10 shadow-xl rounded-t-[3rem] border-b-4 border-dorado">
           <div className="text-center">
             <div className="text-5xl mb-6 text-dorado animate-float inline-block">
               ✉️
             </div>
-
             <h3 className="font-script text-5xl text-vino mb-4">
               Lluvia de Sobres
             </h3>
-
             <div className="w-16 h-px bg-dorado mx-auto mb-6"></div>
-
             <p className="font-serif text-texto text-sm leading-loose italic">
               "El mejor regalo es tu presencia. Pero si deseas tener un detalle
               conmigo, podrás depositarlo en el buzón real que encontrarás en la
               recepción."
             </p>
-
-            <div className="mt-6 text-2xl text-dorado">❦</div>
           </div>
         </div>
-
-        {/* Sombra inferior decorativa */}
-        <div className="h-4 w-3/4 mx-auto bg-[radial-gradient(ellipse_at_center,_var(--color-dorado)_0%,_transparent_70%)] opacity-30 blur-sm"></div>
       </div>
     </section>
   );

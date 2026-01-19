@@ -14,8 +14,8 @@
 
   --animate-fade-in: fadeIn 1.5s ease-out;
   --animate-float: float 3s ease-in-out infinite;
-  --animate-flutter: flutter 0.8s infinite alternate; /* Aleteo */
-  --animate-fly-path: flyPath 15s linear infinite; /* Trayectoria de vuelo */
+  --animate-flutter: flutter 3s infinite ease-in-out alternate;
+  --animate-fly-path: flyPath 20s linear infinite;
 
   @keyframes fadeIn {
     from {
@@ -40,17 +40,18 @@
     }
   }
 
-  /* Animación de aleteo de alas */
   @keyframes flutter {
     0% {
-      transform: scaleX(1) rotate(0deg);
+      transform: rotate(0deg) scale(1);
+    }
+    50% {
+      transform: rotate(10deg) scale(0.9);
     }
     100% {
-      transform: scaleX(0.4) rotate(5deg);
-    } /* Se encoge para simular aleteo */
+      transform: rotate(0deg) scale(1);
+    }
   }
 
-  /* Trayectoria de la mariposa por la pantalla */
   @keyframes flyPath {
     0% {
       offset-distance: 0%;
@@ -69,15 +70,25 @@
   }
 }
 
+/* CLASE MAESTRA PARA EL FONDO FLORAL */
+.bg-floral {
+  background-color: var(--color-crema);
+  /* Patrón sutil de flores/hojas. Puedes cambiar esta URL por tu propia imagen PNG transparente */
+  background-image: url("https://www.transparenttextures.com/patterns/fleur-de-lis.png");
+  background-blend-mode: multiply;
+  background-size: 100px; /* Tamaño del patrón */
+}
+
 /* Estilos globales */
 body {
-  background-color: #2a2a2a;
+  background-color: #1a1a1a; /* Fondo oscuro exterior */
   margin: 0;
   display: flex;
   justify-content: center;
+  overflow: hidden; /* Evita scroll en el body principal */
 }
 
-/* Ocultar scrollbar pero permitir scroll */
+/* Ocultar scrollbar pero permitir funcionalidad */
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }

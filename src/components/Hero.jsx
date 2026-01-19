@@ -5,7 +5,7 @@ export default function Hero() {
     <section className="relative h-screen w-full snap-start flex flex-col justify-center items-center text-center bg-crema overflow-hidden px-6">
       {/* Fondo Floral Tenue */}
       <img
-        src="https://images.unsplash.com/photo-1588410712972-e14a1c6e147f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+        src="https://img.pikbest.com/background/20220119/small-fresh-spring-flowers-hd-background_6227862.jpg!w700wp"
         alt="Fondo Floral"
         className="absolute inset-0 w-full h-full object-cover opacity-10"
       />

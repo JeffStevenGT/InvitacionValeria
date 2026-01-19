@@ -8,7 +8,7 @@ export default function RSVP() {
       style={{ backgroundImage: `url(${imgFondo})` }}
     >
       {/* Capa más opaca (85%) */}
-      <div className="absolute inset-0 bg-crema/95"></div>
+      <div className="absolute inset-0 bg-crema/100"></div>
 
       <div className="relative z-10 flex-grow flex flex-col justify-center px-8">
         <div className="text-center mb-10">

@@ -9,7 +9,7 @@ export default function Gifts() {
       style={{ backgroundImage: `url(${imgFondo})` }}
     >
       {/* Capa más opaca (80%) */}
-      <div className="absolute inset-0 bg-white/90"></div>
+      <div className="absolute inset-0 bg-white/100"></div>
 
       <div className="relative z-10 w-full max-w-xs mx-auto">
         <div className="bg-white/80 backdrop-blur-md p-10 shadow-2xl rounded-t-full border-b-4 border-dorado relative">

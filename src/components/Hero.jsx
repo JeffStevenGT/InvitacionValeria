@@ -9,7 +9,7 @@ export default function Hero() {
       style={{ backgroundImage: `url(${imgFondo})` }}
     >
       {/* Capa más opaca (85%) para que el fondo sea más sutil */}
-      <div className="absolute inset-0 bg-white/85"></div>
+      <div className="absolute inset-0 bg-white/30"></div>
 
       <div className="relative z-10 flex flex-col items-center gap-2 w-full animate-fade-in mt-10">
         <p className="text-vino text-xs tracking-[0.25em] uppercase font-sans mb-2">

@@ -39,7 +39,7 @@ export default function DateCard() {
       style={{ backgroundImage: `url(${imgFondo})` }}
     >
       {/* Capa mucho más opaca (90%) */}
-      <div className="absolute inset-0 bg-crema/92"></div>
+      <div className="absolute inset-0 bg-crema/100"></div>
 
       <div className="absolute inset-6 border border-dorado/40 pointer-events-none z-10"></div>
 

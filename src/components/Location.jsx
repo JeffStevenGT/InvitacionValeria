@@ -24,12 +24,11 @@ const IconoUbicacion = () => (
 
 export default function Location() {
   return (
-    <section className="h-screen w-full snap-start bg-vino text-crema flex flex-col justify-center items-center px-8 relative text-center">
-      {/* Fondo con patrón sutil */}
+    <section className="h-dvh w-full snap-start bg-vino text-crema flex flex-col justify-center items-center px-8 relative text-center">
+      {/* Patrón dorado muy sutil de fondo */}
       <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_var(--color-dorado)_1px,_transparent_1px)] [background-size:20px_20px]"></div>
 
       <div className="relative z-10 flex flex-col gap-12 items-center">
-        {/* Bloque Lugar */}
         <div className="flex flex-col items-center">
           <div className="w-20 h-20 bg-dorado rounded-full flex items-center justify-center mb-6 shadow-xl animate-float">
             <IconoUbicacion />
@@ -52,7 +51,6 @@ export default function Location() {
           </a>
         </div>
 
-        {/* Bloque Vestimenta */}
         <div className="w-full border-t border-dorado/20 pt-8 mt-4">
           <span className="font-script text-3xl text-dorado block mb-2">
             Código de Vestimenta

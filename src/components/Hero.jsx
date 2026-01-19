@@ -2,18 +2,23 @@ import { data } from "../data/info";
 
 export default function Hero() {
   return (
-    // bg-transparent permite ver el fondo floral del App.jsx
-    <section className="relative h-dvh w-full snap-start flex flex-col justify-center items-center text-center px-6 bg-transparent">
-      <div className="relative z-10 flex flex-col items-center gap-2 w-full animate-fade-in">
-        <p className="text-vino text-xs tracking-[0.25em] uppercase font-sans mb-4">
+    <section className="relative h-dvh w-full snap-start flex flex-col justify-center items-center text-center px-6 bg-floral-pattern overflow-hidden">
+      {/* Imagen decorativa superior (flores) */}
+      <img
+        src="https://images.unsplash.com/photo-1588410712972-e14a1c6e147f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+        alt="Flores"
+        className="absolute top-0 w-full h-64 object-cover opacity-20 mask-image-gradient-b"
+        style={{ maskImage: "linear-gradient(to bottom, black, transparent)" }}
+      />
+
+      <div className="relative z-10 flex flex-col items-center gap-2 w-full animate-fade-in mt-10">
+        <p className="text-vino text-xs tracking-[0.25em] uppercase font-sans mb-2">
           Celebrando los
         </p>
 
-        <div className="relative py-8 w-full">
-          {/* Elemento decorativo detrás del nombre */}
-          <div className="absolute inset-x-10 top-1/2 h-px bg-dorado/30 -z-10"></div>
-
-          <h1 className="font-script text-[5.5rem] text-vino leading-[0.7] drop-shadow-sm bg-floral/50 backdrop-blur-[2px] px-2 rounded-xl">
+        {/* Título Principal */}
+        <div className="relative py-6 w-full">
+          <h1 className="font-script text-[5.5rem] text-vino leading-[0.7] drop-shadow-sm">
             {data.nombre}
           </h1>
           <p className="font-serif text-dorado text-lg tracking-[0.4em] uppercase mt-4 ml-1">
@@ -21,7 +26,8 @@ export default function Hero() {
           </p>
         </div>
 
-        <div className="mt-8 flex flex-col gap-3 p-4 border-t border-b border-dorado/20 w-3/4">
+        {/* Padres (Integrados elegantemente) */}
+        <div className="mt-8 flex flex-col gap-3 p-4 border-t border-b border-dorado/30 w-3/4 mx-auto">
           <p className="font-sans text-[9px] uppercase text-texto tracking-widest">
             En compañía de mis padres
           </p>
@@ -33,7 +39,8 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="absolute bottom-6 animate-bounce text-vino opacity-50">
+      {/* Flecha */}
+      <div className="absolute bottom-8 animate-bounce text-vino opacity-50">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"

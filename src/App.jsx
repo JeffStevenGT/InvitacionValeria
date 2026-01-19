@@ -6,9 +6,8 @@ import RSVP from "./components/RSVP";
 
 function App() {
   return (
-    // CAMBIO IMPORTANTE: h-dvh (Dynamic Viewport Height) ajusta el alto real en iPhones
-    <div className="w-full max-w-[420px] h-dvh bg-floral shadow-2xl relative font-sans overflow-y-scroll snap-y snap-mandatory scroll-smooth no-scrollbar">
-      {/* Componentes (Diapositivas) */}
+    // Estructura de Scroll Snap vertical
+    <div className="w-full max-w-[420px] h-dvh bg-[#1a1a1a] shadow-2xl relative font-sans overflow-y-scroll snap-y snap-mandatory scroll-smooth no-scrollbar border-x border-[#1a1a1a]">
       <Hero />
       <DateCard />
       <Location />

@@ -10,7 +10,7 @@ export default function DateCard() {
   });
 
   useEffect(() => {
-    // FECHA FIJA (Ejemplo: dentro de 60 días)
+    // FECHA OBJETIVO + 60 DÍAS
     const targetDate = new Date();
     targetDate.setDate(targetDate.getDate() + 60);
 
@@ -31,15 +31,14 @@ export default function DateCard() {
     return () => clearInterval(interval);
   }, []);
 
-  // Función para crear link de Google Calendar
   const googleCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=XV+Años+de+${data.nombre}&details=${data.frase}&location=${data.ubicacion.lugar}&dates=20240914T180000/20240915T020000`;
 
   return (
-    <section className="h-dvh w-full snap-start flex flex-col justify-center items-center px-6 relative bg-transparent">
+    <section className="h-dvh w-full snap-start bg-floral-pattern flex flex-col justify-center items-center px-6 relative">
       {/* Marco decorativo */}
-      <div className="absolute inset-6 border border-dorado/30 pointer-events-none rounded-lg"></div>
+      <div className="absolute inset-6 border border-dorado/30 pointer-events-none"></div>
 
-      <div className="text-center mb-10 transform scale-100 animate-fade-in">
+      <div className="text-center mb-8 transform scale-100 animate-fade-in">
         <span className="font-script text-4xl text-dorado block mb-2">
           Sábado
         </span>
@@ -55,24 +54,24 @@ export default function DateCard() {
       </div>
 
       {/* CONTADOR */}
-      <div className="flex gap-3 items-center justify-center text-vino mb-10">
+      <div className="flex gap-3 items-center justify-center text-vino mb-10 bg-white/50 backdrop-blur-sm p-4 rounded-lg border border-dorado/20">
         <TimeUnit value={timeLeft.dias} label="Días" />
-        <span className="text-dorado text-xl pb-4">:</span>
+        <span className="text-dorado text-xl pb-3">:</span>
         <TimeUnit value={timeLeft.horas} label="Hrs" />
-        <span className="text-dorado text-xl pb-4">:</span>
+        <span className="text-dorado text-xl pb-3">:</span>
         <TimeUnit value={timeLeft.min} label="Min" />
-        <span className="text-dorado text-xl pb-4">:</span>
+        <span className="text-dorado text-xl pb-3">:</span>
         <TimeUnit value={timeLeft.seg} label="Seg" />
       </div>
 
-      {/* BOTÓN CALENDARIO */}
       <a
         href={googleCalendarUrl}
         target="_blank"
         rel="noreferrer"
-        className="flex items-center gap-2 bg-vino px-6 py-3 rounded-full shadow-lg hover:bg-vino-claro transition-all active:scale-95 group"
+        className="flex items-center gap-2 bg-vino px-6 py-3 rounded-sm shadow-lg hover:bg-vino-claro transition-all active:scale-95 group cursor-pointer"
       >
-        <span className="text-crema font-sans text-xs uppercase tracking-widest group-hover:text-white">
+        <span className="text-dorado text-lg">📅</span>
+        <span className="text-crema font-serif text-xs uppercase tracking-widest">
           Agendar Fecha
         </span>
       </a>
@@ -81,8 +80,8 @@ export default function DateCard() {
 }
 
 const TimeUnit = ({ value, label }) => (
-  <div className="flex flex-col items-center">
-    <span className="font-serif text-2xl w-10 text-center font-bold">
+  <div className="flex flex-col items-center w-10">
+    <span className="font-serif text-2xl font-bold">
       {String(value).padStart(2, "0")}
     </span>
     <span className="font-sans text-[8px] uppercase tracking-widest opacity-70">

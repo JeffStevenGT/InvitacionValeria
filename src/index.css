@@ -14,8 +14,7 @@
 
   --animate-fade-in: fadeIn 1.5s ease-out;
   --animate-float: float 3s ease-in-out infinite;
-  --animate-flutter: flutter 3s infinite ease-in-out alternate;
-  --animate-fly-path: flyPath 20s linear infinite;
+  --animate-flutter: flutter 2s ease-in-out infinite alternate;
 
   @keyframes fadeIn {
     from {
@@ -33,62 +32,38 @@
       transform: translateY(0px);
     }
     50% {
-      transform: translateY(-10px);
+      transform: translateY(-15px);
     }
     100% {
       transform: translateY(0px);
     }
   }
 
+  /* Aleteo suave en su sitio */
   @keyframes flutter {
     0% {
-      transform: rotate(0deg) scale(1);
-    }
-    50% {
-      transform: rotate(10deg) scale(0.9);
+      transform: rotate(-5deg) scale(1);
     }
     100% {
-      transform: rotate(0deg) scale(1);
-    }
-  }
-
-  @keyframes flyPath {
-    0% {
-      offset-distance: 0%;
-      opacity: 0;
-    }
-    10% {
-      opacity: 1;
-    }
-    90% {
-      opacity: 1;
-    }
-    100% {
-      offset-distance: 100%;
-      opacity: 0;
+      transform: rotate(5deg) scale(0.95);
     }
   }
 }
 
-/* CLASE MAESTRA PARA EL FONDO FLORAL */
-.bg-floral {
+/* Fondo floral sutil para secciones claras */
+.bg-floral-pattern {
   background-color: var(--color-crema);
-  /* Patrón sutil de flores/hojas. Puedes cambiar esta URL por tu propia imagen PNG transparente */
-  background-image: url("https://www.transparenttextures.com/patterns/fleur-de-lis.png");
-  background-blend-mode: multiply;
-  background-size: 100px; /* Tamaño del patrón */
+  background-image: url("https://www.transparenttextures.com/patterns/floral-linen.png");
+  background-size: 300px;
 }
 
-/* Estilos globales */
 body {
-  background-color: #1a1a1a; /* Fondo oscuro exterior */
+  background-color: #1a1a1a;
   margin: 0;
   display: flex;
   justify-content: center;
-  overflow: hidden; /* Evita scroll en el body principal */
 }
 
-/* Ocultar scrollbar pero permitir funcionalidad */
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }

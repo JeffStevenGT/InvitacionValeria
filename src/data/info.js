@@ -2,12 +2,12 @@ export const data = {
   nombre: "Valeria",
   padres: {
     mama: "Rosa López",
-    papa: "Abel González",
+    papa: "Abel Cairampoma",
   },
   fecha: {
     dia: "14",
     mes: "Septiembre",
-    ano: "2024",
+    ano: "2026",
     hora: "6:00 PM",
   },
   ubicacion: {
